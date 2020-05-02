@@ -1,7 +1,7 @@
 # Templates
 
 1. [kaggle api for colab](https://github.com/cskarthik7/Templates/#kaggle-api-for-colab)
-2. [Dataloader Template](https://github.com/cskarthik7/Templates/#Dataloader-Template)
+2. [Dataloader Template](https://github.com/cskarthik7/Templates/#Dataloader)
 3. [Training Template](https://github.com/cskarthik7/Templates/#Training-Template)
 4. [encoder decoder of labels](https://github.com/cskarthik7/Templates/#encoder-decoder-of-labels)
 5. [Import all Libraries at once](https://github.com/cskarthik7/Templates/#libraries)
@@ -38,7 +38,7 @@
     !unzip lgg-mri-segmentation.zip
     
 
-# Dataloader Template : 
+# Dataloader  
 
   For Manual Class Dataset : 
   e.g. : 
