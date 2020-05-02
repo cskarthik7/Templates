@@ -4,6 +4,7 @@
 2. [Dataloader Template](https://github.com/cskarthik7/Templates/#Dataloader-Template)
 3. [Training Template](https://github.com/cskarthik7/Templates/#Training-Template)
 4. [encoder decoder of labels](https://github.com/cskarthik7/Templates/#encoder-decoder-of-labels)
+5. [Import all Libraries at once](https://github.com/cskarthik7/Templates/#libraries)
 
 
 
@@ -137,7 +138,39 @@ Decoder :
       decoder={}
       for keys in encoder.keys():
         decoder[encoder[keys]]=keys
-    
+        
+        
+        
+# libraries
+
+    from __future__ import print_function
+    import matplotlib.pyplot as plt
+    import matplotlib.gridspec as gridspec
+    import torch
+    import torch.utils.data
+    from torch import nn, optim
+    from torch.autograd import Variable
+    from torch.nn import functional as F
+    from torchvision import datasets, transforms
+    from torchvision.utils import save_image
+    from PIL import Image
+    import numpy as np
+    %matplotlib inline
+    import matplotlib.pyplot as plt
+    import torch
+    from torch import nn
+    from torch import optim
+    from torchvision import datasets,transforms
+    import torch.nn.functional as F
+    import cv2
+    from torch.utils.data import Dataset, DataLoader
+    import os
+    from PIL import Image
+    import numpy as np
+    import torchvision
+    import torch
+    from torch.utils.data import sampler
+    from torch.utils.data.sampler import SubsetRandomSampler 
  
   
     
