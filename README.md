@@ -1,7 +1,7 @@
 # Templates
 
 1. [kaggle api for colab](https://github.com/cskarthik7/Templates/#kaggle-api-for-colab)
-2. [Dataloader Template](https://github.com/cskarthik7/Templates/#Dataloader-Template)
+2. [Dataloader Template](https://github.com/cskarthik7/Templates/#Dataloader-Dataloader-TemplateTemplate)
 3. [Training Template](https://github.com/cskarthik7/Templates/#Training-Template)
 4. [encoder decoder of labels](https://github.com/cskarthik7/Templates/#encoder-decoder-of-labels)
 
