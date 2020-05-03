@@ -5,6 +5,7 @@
 3. [Training Template](https://github.com/cskarthik7/Templates/#Training-Template)
 4. [Encoder Decoder of labels](https://github.com/cskarthik7/Templates/#Encoder-Decoder-of-labels)
 5. [Import all Libraries at once](https://github.com/cskarthik7/Templates/#Libraries)
+6. [Pretrained models access](https://github.com/cskarthik7/Templates/#pretrained-models)
 
 
 
@@ -171,6 +172,40 @@ Decoder :
     import torch
     from torch.utils.data import sampler
     from torch.utils.data.sampler import SubsetRandomSampler 
+    
+# pretrained models
+E.g. 
+
+import torch
+import torch.nn as nn
+
+
+    class VGG(nn.Module):
+      def __init__(self):
+          num_classes = 1000
+          super(VGG, self).__init__()
+          self.features = self.make_layers([64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'])
+          self.classifier = nn.Sequential(
+              nn.Linear(512 * 7 * 7, 4096),
+              nn.ReLU(True),
+              nn.Dropout(),
+              nn.Linear(4096, 4096),
+              nn.ReLU(True),
+              nn.Dropout(),
+              nn.Linear(4096, num_classes),
+          )
+    
+      def make_layers(self, cfg):
+          layers = []
+          in_channels = 3
+          for v in cfg:
+              if v == 'M':
+                  layers += [nn.MaxPool2d(kernel_size=2, stride=2)]
+              else:
+                  conv2d = nn.Conv2d(in_channels, v, kernel_size=3, padding=1)
+                  layers += [conv2d, nn.BatchNorm2d(v), nn.ReLU(inplace=True)]
+                  in_channels = v
+          return nn.Sequential(*layers)
  
   
     
