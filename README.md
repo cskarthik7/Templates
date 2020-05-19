@@ -65,6 +65,11 @@
       def __len__(self):
         return len(self.images)
         
+  To read image using PIL, just add
+      
+      img = Image.open('/content/drive/My Drive/images/500/png/plain/00001000_plain_500_02.png')
+      img = img.convert('RGB')
+        
   For Transforms : 
   e.g. :
     
