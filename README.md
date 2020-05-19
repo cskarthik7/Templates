@@ -67,8 +67,12 @@
         
   To read image using PIL, just add
       
-      img = Image.open('/content/drive/My Drive/images/500/png/plain/00001000_plain_500_02.png')
+      img=Image.open(self.images[idx])
       img = img.convert('RGB')
+      lab=self.label[idx]
+      img=transform(img)
+      img=np.asarray(img)
+      img=torch.from_numpy(img)
         
   For Transforms : 
   e.g. :
