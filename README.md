@@ -4,9 +4,10 @@
 2. [Dataloader Template](https://github.com/cskarthik7/Templates/#Dataloader)
 3. [Training Template](https://github.com/cskarthik7/Templates/#Training-Template)
 4. [Encoder Decoder of labels](https://github.com/cskarthik7/Templates/#Encoder-Decoder-of-labels)
-5. [Import all Libraries at once](https://github.com/cskarthik7/Templates/#Libraries)
-6. [Pretrained models access](https://github.com/cskarthik7/Templates/#pretrained-models)
-7. [Mounting multipile google drives in Colab](https://github.com/cskarthik7/Templates/#mounting-multiple-drives-in-colab)
+5. [Model Network Architecture](https://github.com/cskarthik7/Templates/#Model-Network-Architecture)
+6. [Import all Libraries at once](https://github.com/cskarthik7/Templates/#Libraries)
+7. [Pretrained models access](https://github.com/cskarthik7/Templates/#pretrained-models)
+8. [Mounting multipile google drives in Colab](https://github.com/cskarthik7/Templates/#mounting-multiple-drives-in-colab)
 
 
 
@@ -150,6 +151,24 @@ Decoder :
       for keys in encoder.keys():
         decoder[encoder[keys]]=keys
         
+# Model Network Architecture 
+
+    class Net(nn.Module):      
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(1, 6, 5)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(16*5*5, 120)
+        self.fc2 = nn.Linear(120, 10)
+        
+    def forward(self, x):
+        x = F.max_pool2d(F.relu(self.conv1(x)), (2,2))
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2)    
+        x = x.view(x.size(0), -1)
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        
+        return x
         
         
 # Libraries
